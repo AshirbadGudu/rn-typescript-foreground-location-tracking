@@ -22,5 +22,12 @@ module.exports = {
       },
     ],
     'react-native-reanimated/plugin',
+    [
+      'module:react-native-dotenv',
+      {
+        moduleName: 'react-native-dotenv',
+        path: '.env',
+      },
+    ],
   ],
 };
