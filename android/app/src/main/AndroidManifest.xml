@@ -2,7 +2,13 @@
   package="com.tsreactnativestater">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <!-- For Foreground Service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- For Mobile Location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -22,5 +28,21 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+      <!-- For Foreground Service -->
+      <meta-data
+        android:name="com.supersami.foregroundservice.notification_channel_name"
+        android:value="Sticky Title"
+      />
+      <meta-data
+        android:name="com.supersami.foregroundservice.notification_channel_description"
+        android:value="Sticky Description."
+      />
+      <meta-data
+        android:name="com.supersami.foregroundservice.notification_color"
+        android:resource="@color/blue"
+      />
+      <service android:name="com.supersami.foregroundservice.ForegroundService"></service>
+      <service android:name="com.supersami.foregroundservice.ForegroundServiceTask"></service>
+      
     </application>
 </manifest>
